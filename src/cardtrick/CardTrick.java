@@ -4,7 +4,7 @@
  */
 package cardtrick;
 import java.util.Random;
-import java.util.Scanner;
+
 
 /**
  * A class that fills a magic hand of 7 cards with random Card Objects
@@ -37,30 +37,25 @@ public class CardTrick {
         luckyCard.setSuit(Card.SUITS[0]); 
 
     
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter the value of your card (1 to 13): ");
-        int userValue = scanner.nextInt();
-        System.out.print("Enter the suit of your card (0 for Hearts, 1 for Diamonds, 2 for Spades, 3 for Clubs): ");
-        int userSuitIndex = scanner.nextInt();
-        String userSuit = Card.SUITS[userSuitIndex];
-        Card userCard = new Card();
-        userCard.setValue(userValue);
-        userCard.setSuit(userSuit);
+
         boolean found = false;
         for (Card card : magicHand) {
-            if (card.getValue() == userCard.getValue() && card.getSuit().equals(userCard.getSuit())) {
-                found = true;
-                break;
+        if (card.getValue() == luckyCard.getValue() && card.getSuit().equals(luckyCard.getSuit())) {
+            found = true;
+            break;
             }
         }
 
-        // Report the result
+
+        
         if (found) {
-            System.out.println("Your card is in the magic hand!");
-        } else {
-            System.out.println("Your card is not in the magic hand.");
+        System.out.println("Congratulations! You found the lucky card!");
+         } else {
+        System.out.println("Sorry, the lucky card is not in the magic hand.");
+        
         }
     }
+}
 
 
-   }
+   
