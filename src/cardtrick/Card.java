@@ -4,6 +4,8 @@
  */
 package cardtrick;
 
+import java.util.Objects;
+
 /**
  * A class that models playing card Objects. Cards have 
  * a value (note that Ace = 1, Jack -11, Queen =12, King = 13)
@@ -14,6 +16,30 @@ package cardtrick;
  * @author dancye
  */
 public class Card {
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Card other = (Card) obj;
+        if (this.value != other.value) {
+            return false;
+        }
+        return Objects.equals(this.suit, other.suit);
+    }
     private String suit; //clubs, spades, diamonds, hearts
     private int value; //1-13
 
