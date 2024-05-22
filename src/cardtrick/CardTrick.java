@@ -40,24 +40,24 @@ public class CardTrick {
         luckyCard.setValue(3);
         luckyCard.setSuit("Diamonds");
         
-        try ( //insert code to ask the user for Card value and suit, create their card
-                Scanner scanner = new Scanner(System.in)) {
-            System.out.println("\nEnter card value 1-13: ");
-            int userVal = scanner.nextInt();
-            scanner.nextLine();
-            System.out.println("Enter card suit(Hearts, Diamonds, Spades, Clubs): ");
-            String userSuit = scanner.nextLine();
-            Card userCard = new Card();
-            
-            userCard.setValue(userVal);
-            userCard.setSuit(userSuit);
+//        try ( //insert code to ask the user for Card value and suit, create their card
+//                Scanner scanner = new Scanner(System.in)) {
+//            System.out.println("\nEnter card value 1-13: ");
+//            int userVal = scanner.nextInt();
+//            scanner.nextLine();
+//            System.out.println("Enter card suit(Hearts, Diamonds, Spades, Clubs): ");
+//            String userSuit = scanner.nextLine();
+//            Card userCard = new Card();
+//            
+//            userCard.setValue(userVal);
+//            userCard.setSuit(userSuit);
         
         
         boolean match = false;
             
             // and search magicHand here
             for(Card cards:magicHand){
-                if(cards.equals(userCard)){
+                if(cards.equals(luckyCard)){
                     match = true;
                 }
                 break;
@@ -71,5 +71,5 @@ public class CardTrick {
             }
         }
     }
-    }
+    
     
