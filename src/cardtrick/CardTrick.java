@@ -27,8 +27,8 @@ public class CardTrick {
         Card[] magicHand = new Card[7];
     
 Card luckyCard = new Card();
-luckyCard.setNumber(7);  // Set the card number to 7
-luckyCard.setSuit("Hearts");  // Set the card suit to Hearts
+luckyCard.setNumber(7);  
+luckyCard.setSuit("Hearts");  
         
    
      
