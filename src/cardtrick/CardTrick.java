@@ -25,16 +25,12 @@ public class CardTrick {
      */
     public static void main(String[] args) {
         Card[] magicHand = new Card[7];
+    
+Card luckyCard = new Card();
+luckyCard.setNumber(7);  // Set the card number to 7
+luckyCard.setSuit("Hearts");  // Set the card suit to Hearts
         
-        // Fill the magic hand with random cards
-        for (int i = 0; i < magicHand.length; i++) {
-            Card c = new Card();
-             Random rnd = new Random();
-            c.setValue(rnd.nextInt(13) + 1);
-            c.setSuit(Card.SUITS[rnd.nextInt(4)]);
-            magicHand[i] = c;
-        }
-        
+   
      
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter the value of your card (1 to 13): ");
@@ -42,26 +38,26 @@ public class CardTrick {
         System.out.print("Enter the suit of your card (0 for Hearts, 1 for Diamonds, 2 for Spades, 3 for Clubs): ");
         int userSuitIndex = scanner.nextInt();
         String userSuit = Card.SUITS[userSuitIndex];
-        Card userCard = new Card();
-        userCard.setValue(userValue);
-        userCard.setSuit(userSuit);
-        boolean found = false;
-        for (Card card : magicHand) {
-            if (card.getValue() == userCard.getValue() && card.getSuit().equals(userCard.getSuit())) {
+       for (int i = 0; i < hand.length; i++) {
+    hand[i] = new Card();
+    hand[i].setNumber((int) (Math.random() * 13) + 1);
+    hand[i].setSuit(Card.SUITS[(int) (Math.random() * 4)]);
+}
+
+
+       boolean found = false;
+        for (Card card : hand) {
+            if (card.getNumber() == luckyCard.getNumber() && card.getSuit().equals(luckyCard.getSuit())) {
                 found = true;
                 break;
             }
         }
 
-        // Report the result
+        // Output the result
         if (found) {
-            System.out.println("Your card is in the magic hand!");
+            System.out.println("You win! The lucky card " + luckyCard + " was found in the hand.");
         } else {
-            System.out.println("Your card is not in the magic hand.");
+            System.out.println("You lose! The lucky card " + luckyCard + " was not found in the hand.");
         }
     }
-
-        //insert code to ask the user for Card value and suit, create their card
-        // and search magicHand here
-        //Then report the result here
-   }
+}
