@@ -4,8 +4,9 @@
  */
 package cardtrick;
 
+
 import java.util.Random;
-import java.util.Scanner;
+
 
 /**
  * A class that fills a magic hand of 7 cards with random Card Objects
@@ -18,46 +19,48 @@ import java.util.Scanner;
  
 
 
-public class CardTrick {
+public class CardTrick 
+{
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        Card[] magicHand = new Card[7];
+    public static void main(String[] args)
+    {
+    Card[] magicHand = new Card[7];
     
-Card luckyCard = new Card();
-luckyCard.setNumber(7);  
-luckyCard.setSuit("Hearts");  
-        
-   
-     
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter the value of your card (1 to 13): ");
-        int userValue = scanner.nextInt();
-        System.out.print("Enter the suit of your card (0 for Hearts, 1 for Diamonds, 2 for Spades, 3 for Clubs): ");
-        int userSuitIndex = scanner.nextInt();
-        String userSuit = Card.SUITS[userSuitIndex];
-       for (int i = 0; i < hand.length; i++) {
-    hand[i] = new Card();
-    hand[i].setNumber((int) (Math.random() * 13) + 1);
-    hand[i].setSuit(Card.SUITS[(int) (Math.random() * 4)]);
-}
-
-
-       boolean found = false;
-        for (Card card : hand) {
-            if (card.getNumber() == luckyCard.getNumber() && card.getSuit().equals(luckyCard.getSuit())) {
-                found = true;
-                break;
-            }
-        }
-
-        // Output the result
-        if (found) {
-            System.out.println("You win! The lucky card " + luckyCard + " was found in the hand.");
-        } else {
-            System.out.println("You lose! The lucky card " + luckyCard + " was not found in the hand.");
+    
+    // Fill the magic hand with random cards
+    for (int i = 0; i < magicHand.length; i++)
+    {
+        Card c = new Card();
+        Random rnd = new Random();
+        c.setValue(rnd.nextInt(13) + 1);
+        c.setSuit(Card.SUITS[rnd.nextInt(4)]);
+        magicHand[i] = c;
+    }
+    
+    // Create luckyCard
+    Card luckyCard = new Card();
+    luckyCard.setValue(7); 
+    luckyCard.setSuit(Card.SUITS[0]); 
+    boolean found = false;
+    for (Card card : magicHand)
+    {
+        if (card.getValue() == luckyCard.getValue() && card.getSuit().equals(luckyCard.getSuit())) 
+        {
+            found = true;
+            break;
         }
     }
+
+    
+    if (found) {
+        System.out.println("Congratulations! You found the lucky card!");
+    }
+    else
+    {
+        System.out.println("Sorry, the lucky card is not in the magic hand.");
 }
+}
+}
+
+
+
