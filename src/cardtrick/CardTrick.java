@@ -36,6 +36,9 @@ public class CardTrick {
             //populates the magicHand array
             magicHand[i] = c;
         }
+        Card luckyCard = new Card();
+        luckyCard.setValue(3);
+        luckyCard.setSuit("Diamonds");
         
         try ( //insert code to ask the user for Card value and suit, create their card
                 Scanner scanner = new Scanner(System.in)) {
