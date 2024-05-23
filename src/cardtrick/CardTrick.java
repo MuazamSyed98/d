@@ -8,7 +8,7 @@ import java.util.Random;
  * Application description: Fills a magic hand of 7 cards with random Card Objects
  * and then asks the user to pick a card and searches the array of cards
  * for the match to the user's card.
- * @author dancye
+ * @author Muhammad Ansari
  */
 public class CardTrick {
 
