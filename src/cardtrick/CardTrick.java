@@ -36,8 +36,6 @@ public class CardTrick {
         luckyCard.setValue(3);
         luckyCard.setSuit("Diamonds");
         
-        String suitChoiceStr = Card.SUITS[suitChoice];
-        
         boolean rightChoice = false;
         for (int i = 0; i < magicHand.length; i++) {
             if (magicHand[i].getValue() == luckyCard.getValue() && magicHand[i].getSuit().equals(luckyCard.getSuit())) {
