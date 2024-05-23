@@ -23,7 +23,7 @@ public class CardTrick {
         Card[] magicHand = new Card[7];
         Card luckyCard = new Card();
         luckyCard.setValue(10);
-        luckCard.setSuit(luckyCard.SUITS[0]);
+        luckCard.setSuit(Card.SUITS[0]);
         
         for (int i=0; i<magicHand.length; i++)
         {
