@@ -23,7 +23,7 @@ public class CardTrick {
         Card[] magicHand = new Card[7];
         Card luckyCard = new Card();
         luckyCard.setValue(10);
-        luckCard.setSuit(Card.SUITS[0]);
+        luckyCard.setSuit(Card.SUITS[0]);
         
         for (int i=0; i<magicHand.length; i++)
         {
@@ -112,8 +112,8 @@ public class CardTrick {
 
         // lucky card check
         CardInHand = false;
-        if(luckCard.getSuit().equals(userCard.getSuit())
-           && luckCard.getValue() == userCard.getValue()){
+        if(luckyCard.getSuit().equals(userCard.getSuit())
+           && luckyCard.getValue() == userCard.getValue()){
             cardInHand = true;
         }
         
