@@ -1,15 +1,13 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
 package cardtrick;
 import java.util.Scanner;
 import java.util.Random;
 
 /**
- * A class that fills a magic hand of 7 cards with random Card Objects
+ * Name: Muhammad Ansari
+ * Student #: 991717324
+ * Application description: Fills a magic hand of 7 cards with random Card Objects
  * and then asks the user to pick a card and searches the array of cards
- * for the match to the user's card. To be used as starting code in ICE 1
+ * for the match to the user's card.
  * @author dancye
  */
 public class CardTrick {
@@ -23,25 +21,38 @@ public class CardTrick {
         Random rnd = new Random();
         Scanner sc = new Scanner(System.in);
         
-        for (int i=0; i<magicHand.length; i++)
-        {
-            int randomValue = rnd.nextInt(13);
-            int randomSuit = rnd.nextInt(3);
+        for (int i = 0; i < magicHand.length; i++) {
+            int randomValue = rnd.nextInt(13) + 1; // Card values 1-13
+            int randomSuit = rnd.nextInt(4); // Suit index 0-3
             
             Card c = new Card();
             c.setValue(randomValue);
             c.setSuit(Card.SUITS[randomSuit]);
+            
+            magicHand[i] = c;
         }
         
-        System.out.print("Enter the card value (1 - 1): ");
+        System.out.print("Enter the card value (1 - 13): ");
         int valueChoice = sc.nextInt();
         
         System.out.print("Enter the card suit (0 = Hearts, 1 = Diamonds, 2 = Spades, 3 = Clubs): ");
         int suitChoice = sc.nextInt();
-
-        // and search magicHand here
         
-        //Then report the result here
-   }
-    
+        String suitChoiceStr = Card.SUITS[suitChoice];
+        
+        boolean rightChoice = false;
+        for (int i = 0; i < magicHand.length; i++) {
+            if (magicHand[i].getValue() == valueChoice && magicHand[i].getSuit().equals(suitChoiceStr)) {
+                rightChoice = true;
+                break;
+            }
+        }
+        
+        if (rightChoice) {
+            System.out.println("Your guess was CORRECT!");
+        } else {
+            System.out.println("Sorry, your guess was WRONG.");
+        }
+    }
 }
+
