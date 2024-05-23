@@ -21,6 +21,9 @@ public class CardTrick {
      */
     public static void main(String[] args) {
         Card[] magicHand = new Card[7];
+        Card luckyCard = new Card();
+        luckyCard.setValue(10);
+        luckCard.setSuit(luckyCard.SUITS[0]);
         
         for (int i=0; i<magicHand.length; i++)
         {
@@ -106,6 +109,15 @@ public class CardTrick {
         // ternary operator to clean up output
         String resultString = cardInHand == true ? " is in hand" : " is not in hand";
         System.out.println(userCard.getValue() + " of " + userCard.getSuit() + resultString);
+
+        // lucky card check
+        CardInHand = false;
+        if(luckCard.getSuit().equals(userCard.getSuit())
+           && luckCard.getValue() == userCard.getValue()){
+            cardInHand = true;
+        }
+        
+        String luckyCardResultString = cardInHand == true ? " is your lucky card" : " is not your lucky card";
+        System.out.println(userCard.getValue() + " of " + userCard.getSuit() + luckyCardResultString);
    }
-    
 }
