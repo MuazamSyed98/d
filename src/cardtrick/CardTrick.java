@@ -25,7 +25,7 @@ public class CardTrick {
         
         for (int i=0; i<magicHand.length; i++)
         {
-            int randomValue = rnd.nextInt(10);
+            int randomValue = rnd.nextInt(13);
             int randomSuit = rnd.nextInt(3);
             
             Card c = new Card();
@@ -33,8 +33,12 @@ public class CardTrick {
             c.setSuit(Card.SUITS[randomSuit]);
         }
         
+        System.out.print("Enter the card value (1 - 1): ");
+        int valueChoice = sc.nextInt();
         
-        //insert code to ask the user for Card value and suit, create their card
+        System.out.print("Enter the card suit (0 = Hearts, 1 = Diamonds, 2 = Spades, 3 = Clubs): ");
+        int suitChoice = sc.nextInt();
+
         // and search magicHand here
         
         //Then report the result here
