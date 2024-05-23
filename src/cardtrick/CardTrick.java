@@ -111,7 +111,7 @@ public class CardTrick {
         System.out.println(userCard.getValue() + " of " + userCard.getSuit() + resultString);
 
         // lucky card check
-        CardInHand = false;
+        cardInHand = false;
         if(luckyCard.getSuit().equals(userCard.getSuit())
            && luckyCard.getValue() == userCard.getValue()){
             cardInHand = true;
