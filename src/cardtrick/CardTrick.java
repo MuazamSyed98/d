@@ -31,27 +31,25 @@ public class CardTrick {
             
             magicHand[i] = c;
         }
-        
-        System.out.print("Enter the card value (1 - 13): ");
-        int valueChoice = sc.nextInt();
-        
-        System.out.print("Enter the card suit (0 = Hearts, 1 = Diamonds, 2 = Spades, 3 = Clubs): ");
-        int suitChoice = sc.nextInt();
+
+        Card luckyCard = new Card();
+        luckyCard.setValue(3);
+        luckyCard.setSuit("Diamonds");
         
         String suitChoiceStr = Card.SUITS[suitChoice];
         
         boolean rightChoice = false;
         for (int i = 0; i < magicHand.length; i++) {
-            if (magicHand[i].getValue() == valueChoice && magicHand[i].getSuit().equals(suitChoiceStr)) {
+            if (magicHand[i].getValue() == luckyCard.getValue() && magicHand[i].getSuit().equals(luckyCard.getSuit())) {
                 rightChoice = true;
                 break;
             }
         }
         
         if (rightChoice) {
-            System.out.println("Your guess was CORRECT!");
+            System.out.println("Congratulation, YOU WON!");
         } else {
-            System.out.println("Sorry, your guess was WRONG.");
+            System.out.println("Sorry, YOU LOST!.");
         }
     }
 }
