@@ -9,6 +9,7 @@ import java.util.Random;
  * and then asks the user to pick a card and searches the array of cards
  * for the match to the user's card.
  * @author Muhammad Ansari
+ * date modified: May 22, 2024
  */
 public class CardTrick {
 
